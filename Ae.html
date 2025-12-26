@@ -155,13 +155,29 @@ body{
   color:var(--muted);
 }
 
-/* ===== RESPONSIVE ===== */
+/* ==================================================
+   ONLY CHANGE: MOBILE FULL-WIDTH SIDEBAR
+   ================================================== */
 @media(max-width:768px){
-  .menu-btn{display:block}
 
-  .sidebar{left:-100%}
-  .sidebar.show{left:0}
+  /* Show hamburger */
+  .menu-btn{
+    display:block;
+    left:14px;
+    right:auto;
+  }
 
+  /* Sidebar becomes full width */
+  .sidebar{
+    width:100%;
+    left:-100%;
+  }
+
+  .sidebar.show{
+    left:0;
+  }
+
+  /* Content stays left */
   .main-content{
     margin-left:0;
     padding-top:80px;
@@ -185,19 +201,12 @@ body{
   <h3>Department Information</h3>
   <ul>
     <li class="active">HOD's Desk</li>
-<br>
     <li>Faculty</li>
-<br>
     <li>Achievements</li>
-<br>
     <li>Laboratories</li>
-<br>
     <li>Infrastructure & Facilities</li>
-<br>
     <li>Activities</li>
-<br>
     <li>Syllabus</li>
-<br>
     <li>Timetable</li>
   </ul>
 </nav>
@@ -247,12 +256,10 @@ body{
     </ul>
   </div>
 
-  <!-- COURSE OFFERED (FULL WIDTH BELOW INFRASTRUCTURE) -->
+  <!-- COURSE OFFERED -->
   <div class="box">
     <h2>Course Offered</h2>
-    <p>
-      <strong>Diploma in Automobile Engineering</strong>
-    </p>
+    <p><strong>Diploma in Automobile Engineering</strong></p>
     <ul>
       <li>Duration: 3 Years</li>
       <li>Intake Capacity: 60 Seats</li>
@@ -284,4 +291,5 @@ function toggleSidebar(){
 
 </body>
 </html>
+
 
