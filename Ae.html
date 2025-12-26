@@ -1,347 +1,263 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Automobile Engineering — Satara Polytechnic Satara</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty — Automobile Engineering | Satara Polytechnic</title>
 
-  <style>
-    :root{
-      --bg:#f7f8fb;
-      --card:#ffffff;
-      --accent:#0b63d6;
-      --muted:#666;
-      --radius:12px;
-      --sidebar-width:280px;
-    }
+<style>
+:root{
+  --bg:#f4f6fb;
+  --card:#ffffff;
+  --accent:#0b63d6;
+  --accent2:#1ea7ff;
+  --text:#111;
+  --muted:#666;
+  --radius:16px;
+}
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins, system-ui, -apple-system;
+}
 
-    body{
-      margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      background:var(--bg);
-      color:#111;
-      line-height:1.45;
-    }
+body{
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
 
-    /* ===================== SIDEBAR ===================== */
-    .sidebar{
-      position:fixed;
-      top:0;
-      left:0;
-      width:var(--sidebar-width);
-      height:100vh;
-      background:#fff;
-      border-right:1px solid #ddd;
-      padding:20px 0;
-      overflow-y:auto;
-      transition:0.3s ease;
-      z-index:1000;
-    }
+/* ===== CONTAINER ===== */
+.container{
+  max-width:1100px;
+  margin:28px auto;
+  padding:0 14px;
+}
 
-    .sidebar-title{
-      text-align:center;
-      font-size:18px;
-      font-weight:600;
-      margin-bottom:16px;
-    }
+/* ===== SECTION HEADER (BLUE BAR ONLY) ===== */
+.section-header{
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#fff;
+  padding:14px 18px;
+  border-radius:12px;
+  margin-bottom:22px;
+  box-shadow:0 8px 22px rgba(11,99,214,0.25);
+}
 
-    .sidebar ul{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
+.section-header h2{
+  font-size:18px;
+  margin-bottom:4px;
+}
 
-    .sidebar li{
-      padding:14px 22px;
-      border-bottom:1px solid #eee;
-      font-weight:500;
-      cursor:pointer;
-      transition:0.25s;
-    }
+.section-header p{
+  font-size:13px;
+  opacity:.95;
+}
 
-    .sidebar li:hover{
-      background:#f2f4f8;
-    }
+/* ===== GRID ===== */
+.faculty-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+}
 
-    .sidebar li.active{
-      margin:6px 10px;
-      border-radius:6px;
-      background:linear-gradient(90deg,#7b1fa2,#1a237e);
-      color:#fff;
-    }
+/* ===== CARD ===== */
+.faculty-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:22px 16px 20px;
+  text-align:center;
+  box-shadow:0 10px 24px rgba(0,0,0,0.08);
+  transform:translateY(30px);
+  opacity:0;
+  animation:fadeUp .6s ease forwards;
+}
 
-    /* ===================== MOBILE TOGGLE ===================== */
-    .menu-toggle{
-      display:none;
-      position:fixed;
-      top:14px;
-      left:14px;
-      font-size:24px;
-      background:#7b1fa2;
-      color:#fff;
-      padding:8px 12px;
-      border-radius:6px;
-      cursor:pointer;
-      z-index:1100;
-    }
+.faculty-card:nth-child(1){animation-delay:.05s}
+.faculty-card:nth-child(2){animation-delay:.1s}
+.faculty-card:nth-child(3){animation-delay:.15s}
+.faculty-card:nth-child(4){animation-delay:.2s}
 
-    /* ===================== MAIN CONTENT ===================== */
-    .container{
-      margin-left:var(--sidebar-width);
-      padding:28px;
-      max-width:1100px;
-    }
+/* ===== PHOTO ===== */
+.faculty-photo{
+  width:100px;
+  height:100px;
+  margin:0 auto 12px;
+  border-radius:50%;
+  overflow:hidden;
+  border:3px solid var(--accent);
+  background:#eee;
+}
 
-    .header{
-      background:linear-gradient(90deg,var(--accent),#1ea7ff);
-      color:#fff;
-      padding:20px;
-      border-radius:var(--radius);
-      display:flex;
-      gap:16px;
-      align-items:center;
-      box-shadow:0 8px 30px rgba(11,99,214,0.12);
-    }
+.faculty-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-    .logo{
-      width:72px;
-      height:72px;
-      border-radius:10px;
-      background:rgba(255,255,255,0.12);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-    }
+/* ===== TEXT ===== */
+.faculty-name{
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:4px;
+}
 
-    .card{
-      background:var(--card);
-      padding:18px;
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(15,15,15,0.04);
-      margin-top:18px;
-    }
+.faculty-role{
+  font-size:13px;
+  color:var(--accent);
+  margin-bottom:6px;
+}
 
-    .section-title{
-      font-size:16px;
-      margin:0 0 10px;
-      color:var(--accent);
-      font-weight:600;
-    }
+.faculty-meta{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.4;
+  margin-bottom:6px;
+}
 
-    .dept-meta p{margin:8px 0;color:var(--muted)}
-    .dept-meta ul{margin:8px 0 0 18px;color:var(--muted)}
+.faculty-email{
+  font-size:12.5px;
+  color:var(--accent);
+  word-break:break-word;
+}
 
-    .lab-images{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-      gap:10px;
-      margin-top:12px;
-    }
+/* ===== HOVER (DESKTOP ONLY) ===== */
+@media (hover:hover){
+  .faculty-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 38px rgba(0,0,0,0.14);
+  }
+}
 
-    .lab-images img{
-      width:100%;
-      height:110px;
-      object-fit:cover;
-      border-radius:8px;
-    }
+/* ===== ANIMATION ===== */
+@keyframes fadeUp{
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+}
 
-    .staff-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:14px;
-    }
+/* ===== FOOTER ===== */
+.footer{
+  margin-top:26px;
+  text-align:center;
+  font-size:13px;
+  color:var(--muted);
+}
 
-    .staff-card{
-      display:flex;
-      gap:12px;
-      padding:12px;
-      border-radius:10px;
-      background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent);
-    }
+/* ===== MOBILE PERFECT ===== */
+@media(max-width:480px){
 
-    .staff-photo{
-      width:84px;
-      height:84px;
-      object-fit:cover;
-      border-radius:8px;
-    }
+  .container{
+    padding:0 12px;
+  }
 
-    .small-table{
-      width:100%;
-      margin-top:12px;
-      border-collapse:collapse;
-    }
+  .section-header{
+    padding:12px 14px;
+  }
 
-    .small-table th,.small-table td{
-      padding:10px;
-      border:1px solid #eee;
-      font-size:14px;
-    }
+  .faculty-grid{
+    grid-template-columns:1fr;
+  }
 
-    .footer{
-      margin-top:22px;
-      padding:14px;
-      text-align:center;
-      color:var(--muted);
-    }
+  .faculty-card{
+    padding:20px 14px 18px;
+  }
 
-    /* ===================== RESPONSIVE ===================== */
-    @media(max-width:768px){
-      .menu-toggle{display:block}
+  .faculty-photo{
+    width:92px;
+    height:92px;
+  }
 
-      .sidebar{
-        left:-100%;
-      }
+  .faculty-name{
+    font-size:15px;
+  }
 
-      .sidebar.show{
-        left:0;
-      }
+  .faculty-role,
+  .faculty-meta{
+    font-size:12.5px;
+  }
 
-      .container{
-        margin-left:0;
-        padding-top:80px;
-      }
-    }
-  </style>
+  .faculty-email{
+    font-size:12px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<!-- MOBILE MENU BUTTON -->
-<div class="menu-toggle" onclick="toggleSidebar()">☰</div>
-
-<!-- LEFT SIDEBAR -->
-<nav class="sidebar" id="sidebar">
-  <div class="sidebar-title">Department Information</div>
-  <ul>
-    <li class="active">HOD's Desk</li>
-    <li>Faculty</li>
-    <li>Achievements</li>
-    <li>Laboratories</li>
-    <li>Infrastructure & Facilities</li>
-    <li>Activities</li>
-    <li>Syllabus</li>
-    <li>Timetable</li>
-    <li>Guardian Faculty Scheme</li>
-    <li>Result Analysis</li>
-    <li>PEO / PO's</li>
-    <li>CO</li>
-    <li>MoU</li>
-  </ul>
-</nav>
-
-<!-- MAIN CONTENT -->
 <div class="container">
-<header class="header">
-      <div class="logo">SPS</div>
-      <div>
-        <h1>Satara Polytechnic Satara</h1>
-        <p>Department of Automobile Engineering</p>
+
+  <!-- BLUE BAR ABOVE CARDS -->
+  <div class="section-header">
+    <h2>Department of Automobile Engineering</h2>
+    <p>Faculty Information — Satara Polytechnic Satara</p>
+  </div>
+
+  <div class="faculty-grid">
+
+    <div class="faculty-card">
+      <div class="faculty-photo">
+        <img src="https://i.ibb.co/ZzWS61xL/gaikwad.jpg" alt="HOD">
       </div>
-    </header>
+      <div class="faculty-name">Mr. Gaikwad Abhaysingh Vilasrao</div>
+      <div class="faculty-role">Incharge HOD</div>
+      <div class="faculty-meta">
+        B.E. (Mechanical), M.E. (Design)<br>
+        Experience: 8 Years
+      </div>
+      <div class="faculty-email">abhaysinhgkwd@gmail.com</div>
+    </div>
 
-    <main>
-      <section class="card dept-meta">
-        <!-- EXACT DATA FROM YOUR UPLOADED CODE -->
-        <h4 class="section-title">Automobile Engineering</h4>
-        <p><strong>Established:</strong> 1983</p>
-        <p><strong>Vision:</strong> The vision of Automobile Engineering Department is to grow the students into engineers and entrepreneurs with elevated skills, who can accumulate the global demands and input concepts and knowledge of automobile engineering.</p>
-        <p><strong>Mission:</strong> The mission is to input concepts and knowledge of automobile engineering and develop psycho-motor and soft skills by providing global-standard facilities and programs.</p>
+    <div class="faculty-card">
+      <div class="faculty-photo">
+        <img src="https://i.ibb.co/b5Z0qGCM/vhiki.jpg" alt="Faculty">
+      </div>
+      <div class="faculty-name">Mr. Bhosale Vhiki Ashok</div>
+      <div class="faculty-role">Lecturer</div>
+      <div class="faculty-meta">
+        B.E. (Production)<br>
+        Experience: 10 Years
+      </div>
+      <div class="faculty-email">bhosalevicky123@gmail.com</div>
+    </div>
 
-        <h5 class="section-title">Laboratories</h5>
-        <ul>
-          <li>System and Body Engineering Lab</li>
-          <li>SATTEP Lab</li>
-          <li>Auto Engines Lab</li>
-        </ul>
+    <div class="faculty-card">
+      <div class="faculty-photo">
+        <img src="https://i.ibb.co/kgPMjCRw/mane.jpg" alt="Faculty">
+      </div>
+      <div class="faculty-name">Mr. Mane Amol Mohan</div>
+      <div class="faculty-role">Lecturer</div>
+      <div class="faculty-meta">
+        B.E. (Mechanical)<br>
+        Experience: 9 Years
+      </div>
+      <div class="faculty-email">amolmane2806@gmail.com</div>
+    </div>
 
-        <div class="lab-images" aria-hidden="false">
-          <img src="https://i.ibb.co/G4kNp2dz/Auto-Autmobile-sytem-and-body-engineering.jpg" alt="Auto lab1">
-          <img src="https://i.ibb.co/Pnd75tT/Auto-Autmobile-sytem-and-body-engineering4.jpg" alt="Auto lab2">
-          <img src="https://i.ibb.co/Lz7jmwzM/Auto-Auto-Engines-Lab.jpg" alt="Auto engines">
-          <img src="https://i.ibb.co/Gfw1VN1S/Auto-Auto-Engines-Lab3.jpg" alt="Auto engines2">
-          <img src="https://i.ibb.co/HfZW3fnW/Auto-SATTEP-Lab.jpg" alt="SATTEP lab">
-          <img src="https://i.ibb.co/jPKPD2Y9/Auto-SATTEP-Lab4.jpg" alt="SATTEP lab2">
-        </div>
+    <div class="faculty-card">
+      <div class="faculty-photo">
+        <img src="https://i.ibb.co/LD6hx7wt/nikam.jpg" alt="Faculty">
+      </div>
+      <div class="faculty-name">Mr. Nikam Pramod Sudhakar</div>
+      <div class="faculty-role">Technical Assistant</div>
+      <div class="faculty-meta">
+        Diploma in Automobile Engineering
+      </div>
+      <div class="faculty-email">psnikam2010@gmail.com</div>
+    </div>
 
-        <h5 class="section-title">Equipment & Placement</h5>
-        <p>Major Equipment: Petrol Engines, Diesel Engines, Carburetors, MPFI Engine, CRDI Engine, Simulators, Maruti 800, Mahindra Jeep, Auto Rickshaw, Kinetic Honda, Measuring Instruments, Gear Boxes, Starter motors, Charts etc.</p>
+  </div>
 
-        <table class="small-table" aria-label="Placement table">
-          <thead><tr><th>Year</th><th>Placed</th></tr></thead>
-          <tbody>
-            <tr><td>2013-14</td><td>20</td></tr>
-            <tr><td>2014-15</td><td>17</td></tr>
-            <tr><td>2015-16</td><td>14</td></tr>
-            <tr><td>2016-17</td><td>20</td></tr>
-            <tr><td>2017-18</td><td>18</td></tr>
-            <tr><td>2018-19</td><td>17</td></tr>
-          </tbody>
-        </table>
-      </section>
+  <div class="footer">
+    © Satara Polytechnic Satara — Automobile Engineering Department
+  </div>
 
-      <section class="card">
-        <h5 class="section-title">Staff — Automobile Department</h5>
-        <div class="staff-grid">
-          <!-- Gaikwad (HOD) -->
-          <div class="staff-card">
-            <img class="staff-photo" src="https://i.ibb.co/ZzWS61xL/gaikwad.jpg" alt="Gaikwad">
-            <div class="staff-body">
-              <div class="staff-name">Mr. Gaikwad Abhaysingh Vilasrao</div>
-              <div class="staff-role">Incharge HOD — B.E. (Mechanical), M.E. (Design)</div>
-              <div class="staff-meta">Experience: 8 Years</div>
-              <div class="staff-email">abhaysinhgkwd@gmail.com</div>
-            </div>
-          </div>
-
-          <!-- Bhosale Vhiki Ashok -->
-          <div class="staff-card">
-            <img class="staff-photo" src="https://i.ibb.co/b5Z0qGCM/vhiki.jpg" alt="Vhiki Bhosale">
-            <div class="staff-body">
-              <div class="staff-name">Mr. Bhosale Vhiki Ashok</div>
-              <div class="staff-role">Lecturer — B.E. (Production)</div>
-              <div class="staff-meta">Experience: 10 Years</div>
-              <div class="staff-email">bhosalevicky123@gmail.com</div>
-            </div>
-          </div>
-
-          <!-- Mane Amol Mohan -->
-          <div class="staff-card">
-            <img class="staff-photo" src="https://i.ibb.co/kgPMjCRw/mane.jpg" alt="Mane Amol">
-            <div class="staff-body">
-              <div class="staff-name">Mr. Mane Amol Mohan</div>
-              <div class="staff-role">Lecturer — B.E. (Mechanical)</div>
-              <div class="staff-meta">Experience: 9 Years</div>
-              <div class="staff-email">amolmane2806@gmail.com</div>
-            </div>
-          </div>
-
-          <!-- Nikam Pramod -->
-          <div class="staff-card">
-            <img class="staff-photo" src="https://i.ibb.co/LD6hx7wt/nikam.jpg" alt="Nikam">
-            <div class="staff-body">
-              <div class="staff-name">Mr. Nikam Pramod Sudhakar</div>
-              <div class="staff-role">Technical Assistant — Diploma in Auto Engg.</div>
-              <div class="staff-meta">Experience: —</div>
-              <div class="staff-email">psnikam2010@gmail.com</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="footer card">For detailed queries contact the department email addresses listed above.</div>
-    </main>
 </div>
-
-<script>
-  function toggleSidebar(){
-    document.getElementById("sidebar").classList.toggle("show");
-  }
-</script>
 
 </body>
 </html>
