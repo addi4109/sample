@@ -14,14 +14,76 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background:#f4f6fb;overflow-x:hidden;}
 
-/* NAVBAR */
-.navbar{background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);padding:0.5rem 0.8rem;}
-.navbar-brand img{width:38px;border-radius:50%;}
-.navbar-nav{margin-left:20px;}
-.navbar-dark .navbar-nav .nav-link{color:#fff!important;font-weight:600;padding:7px 12px;}
-.navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link.active{background:#f39c12;color:#000!important;border-radius:6px;}
+.navbar{
+  background-color: rgba(0,0,0,0.6); /* ❗ SAME transparency as your home page */
+  padding: 0.35rem 0.6rem;           /* height from your provided CSS */
+}
 
+/* Logo */
+.navbar-brand img{
+  width: 38px;
+  height: 38px;                      /* prevents height increase */
+  border-radius: 50%;
+}
+
+/* Nav alignment */
+.navbar-nav{
+  margin-left: 20px;
+}
+
+/* Space between items */
+.navbar-nav .nav-item{
+  margin-right: 7px;
+  font-size: 14px;
+}
+
+/* Nav links */
+.navbar-dark .navbar-nav .nav-link{
+  color: #fff !important;
+  font-weight: 600;
+  padding: 6px 10px;                 /* content size from your CSS */
+  transition: all 0.3s ease;
+}
+
+/* Hover + Active */
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active{
+  background: #f39c12;
+  color: #000 !important;
+  border-radius: 6px;
+}
+/* ===== MOBILE CENTER MENU ===== */
+@media (max-width: 767px){
+  .navbar-nav{
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item{
+    margin: 6px 0;
+  }
+
+  .navbar-nav .nav-link{
+    display: inline-block;
+  }
+}
+
+
+/* Mobile center */
+@media(max-width:767px){
+  .navbar-nav{
+    margin-left:0;
+    width:100%;
+    text-align:center;
+  }
+  .navbar-nav .nav-item{
+    margin:6px 0;
+  }
+  .navbar-nav .nav-link{
+    display:inline-block;
+  }
+}
 /* HERO */
 .hero{
   min-height:100vh;
@@ -106,6 +168,30 @@ body{background:#f4f6fb;overflow-x:hidden;}
 .news-content{padding:18px}
 .news-title{height:18px;width:80%;background:#ccc;margin-bottom:10px}
 .news-date{height:14px;width:50%;background:#eee}
+/* ===== ADMISSION BOX ANIMATION ===== */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+.admission-box{
+  animation:
+    fadeSlideUp 1.2s ease-out forwards,
+    glowPulse 3s ease-in-out infinite;
+}
+
+/* Optional hover effect */
+.admission-box:hover{
+  transform: translateY(-6px);
+  transition: transform 0.3s ease;
+}
 </style>
 </head>
 
@@ -131,6 +217,7 @@ body{background:#f4f6fb;overflow-x:hidden;}
       <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
       <li class="nav-item"><a class="nav-link" href="admission.html">Admission Process</a></li>
       <li class="nav-item"><a class="nav-link" href="placements.html">Our Placements</a></li>
+      <li class="nav-item"><a class="nav-link" href="placements.html">Non-Teaching Staff</a></li>
     </ul>
   </div>
 </nav>
@@ -167,20 +254,6 @@ body{background:#f4f6fb;overflow-x:hidden;}
 <div class="inner-container">
   <center><h4>First Year</h4></center>
   <div class="rankers-grid">
-    <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 1</h5><p>Student Name</p><p>Student Dept</p></div>
-    <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 2</h5><p>Student Name</p><p>Student Dept</p></div>
-    <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 3</h5><p>Student Name</p><p>Student Dept</p></div>
-  </div>
-  <br>
-  <center><h4>Second Year</h4></center>
-    <div class="rankers-grid">
-    <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 1</h5><p>Student Name</p><p>Student Dept</p></div>
-    <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 2</h5><p>Student Name</p><p>Student Dept</p></div>
-    <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 3</h5><p>Student Name</p><p>Student Dept</p></div>
-  </div>
-  <br>
-  <center><h4>Third Year</h4></center>
-    <div class="rankers-grid">
     <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 1</h5><p>Student Name</p><p>Student Dept</p></div>
     <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 2</h5><p>Student Name</p><p>Student Dept</p></div>
     <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 3</h5><p>Student Name</p><p>Student Dept</p></div>
@@ -230,9 +303,3 @@ move();
 
 </body>
 </html>
-
-
-
-
-
-
