@@ -127,6 +127,11 @@ body{background:#f4f6fb;overflow-x:hidden;}
     padding:0 48px; /* keeps space for arrows */
   }
 }
+/* 🚀 PERFORMANCE BOOST */
+.news-3-track{
+  will-change: transform;
+  transform: translate3d(0,0,0);
+}
 
 </style>
 </head>
@@ -414,19 +419,25 @@ function lifeAuto(){
 <script>
 const track3 = document.getElementById('news3Track');
 const cards3 = document.querySelectorAll('.news-card-3');
+
 let index3 = 0;
-let auto3;
+let auto3 = null;
+let cardStep = 0;
 
 function visibleCards(){
-  if(window.innerWidth < 600) return 1;
-  if(window.innerWidth < 900) return 2;
+  if (window.innerWidth < 600) return 1;
+  if (window.innerWidth < 900) return 2;
   return 3;
 }
 
-function updateSlider(){
+function calculateStep(){
   if(!cards3.length) return;
-  const cardWidth = cards3[0].offsetWidth + 24;
-  track3.style.transform = `translateX(-${index3 * cardWidth}px)`;
+  cardStep = cards3[0].getBoundingClientRect().width + 24;
+}
+
+function updateSlider(){
+  track3.style.transform =
+    `translate3d(${-index3 * cardStep}px,0,0)`;
 }
 
 function news3Next(){
@@ -453,9 +464,17 @@ function news3Auto(){
   }, 3000);
 }
 
-window.addEventListener('resize', updateSlider);
-</script>
+/* Init */
+window.addEventListener('load', ()=>{
+  calculateStep();
+  updateSlider();
+});
 
+window.addEventListener('resize', ()=>{
+  calculateStep();
+  updateSlider();
+});
+</script>
 </body>
 </html>
 
