@@ -7,336 +7,105 @@
 <title>Satara Polytechnic Satara</title>
 
 <link rel="icon" href="https://www.satarapolytechnicsatara.org/icon.png" type="image/png">
-
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<!-- Bootstrap -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-/* ============ RESET ============ */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f6fb;overflow-x:hidden;}
 
-body{
-  background:#f4f6fb;
-  overflow-x:hidden;
-}
-
-/* ============ NAVBAR ============ */
-.navbar{
-  background:rgba(0,0,0,0.75);
-  backdrop-filter:blur(8px);
-  padding:0.5rem 0.8rem;
-}
-
-.navbar-brand img{
-  width:38px;
-  border-radius:50%;
-}
-
-.navbar-nav{
-  margin-left:20px;
-}
-
-.navbar-dark .navbar-nav .nav-link{
-  color:#fff !important;
-  font-weight:600;
-  padding:7px 12px;
-  transition:0.3s;
-}
-
+/* NAVBAR */
+.navbar{background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);padding:0.5rem 0.8rem;}
+.navbar-brand img{width:38px;border-radius:50%;}
+.navbar-nav{margin-left:20px;}
+.navbar-dark .navbar-nav .nav-link{color:#fff!important;font-weight:600;padding:7px 12px;}
 .navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link.active{
-  background:#f39c12;
-  color:#000 !important;
-  border-radius:6px;
-}
+.navbar-dark .navbar-nav .nav-link.active{background:#f39c12;color:#000!important;border-radius:6px;}
 
-/* ============ HERO ============ */
+/* HERO */
 .hero{
   min-height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('https://www.satarapolytechnicsatara.org/f1.jpg') center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:#fff;
+  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+  url('https://www.satarapolytechnicsatara.org/f1.jpg') center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
   padding:120px 15px 60px;
 }
+.hero h1{font-size:clamp(32px,4.5vw,56px);}
+.hero img{width:140px;border-radius:50%;margin:25px 0;}
 
-.hero h1{
-  font-size:clamp(32px,4.5vw,56px);
-  font-weight:600;
-}
-
-.hero img{
-  width:140px;
-  border-radius:50%;
-  margin:25px 0;
-}
-
-/* ============ ADMISSION BOX ============ */
 .admission-box{
-  background:rgba(255,255,255,0.18);
+  background:rgba(255,255,255,.18);
   backdrop-filter:blur(12px);
   padding:1.8rem 2.4rem;
   border-radius:18px;
   max-width:440px;
   margin:auto;
-  box-shadow:0 15px 40px rgba(0,0,0,0.35);
+  box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
+.admission-box h5{color:#ffd24d;margin-bottom:14px}
 
-.admission-box h5{
-  color:#ffd24d;
-  font-weight:600;
-  margin-bottom:14px;
-}
+/* SECTIONS */
+.section{padding:80px 15px}
+.section h2{text-align:center;margin-bottom:50px;font-weight:600}
 
-.admission-box p{
-  margin:6px 0;
-  font-size:1rem;
-}
-
-/* ============ COMMON SECTION ============ */
-.section{
-  padding:80px 15px;
-}
-
-.section h2{
-  text-align:center;
-  font-weight:600;
-  margin-bottom:50px;
-}
-
-/* ============ WHY CHOOSE US ============ */
-.features{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:25px;
+/* CONTAINER SAME WIDTH */
+.inner-container{
   max-width:1100px;
   margin:auto;
 }
 
+/* WHY CHOOSE */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
 .feature-card{
   background:#fff;
-  padding:30px 25px;
+  padding:30px;
   border-radius:18px;
   text-align:center;
-  box-shadow:0 12px 30px rgba(0,0,0,0.08);
-  transition:0.3s;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
+.feature-card:hover{transform:translateY(-8px)}
 
-.feature-card:hover{
-  transform:translateY(-10px);
-}
-
-.feature-card h5{
-  font-weight:600;
-  margin-bottom:10px;
-}
-
-/* ============ RANKERS ============ */
-.rankers-year{
-  max-width:1100px;
-  margin:0 auto 50px;
-}
-
-.rankers-year h4{
-  text-align:center;
-  font-weight:600;
-  margin-bottom:25px;
-  color:#0b63d6;
-}
-
+/* RANKERS */
 .rankers-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:25px;
 }
-
 .rank-card{
   background:#fff;
-  padding:25px 20px;
+  padding:25px;
   border-radius:18px;
   text-align:center;
-  box-shadow:0 12px 30px rgba(0,0,0,0.08);
-  transition:0.3s;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
-
-.rank-card:hover{
-  transform:translateY(-8px);
-}
-
 .rank-placeholder{
-  width:90px;
-  height:90px;
-  margin:0 auto 15px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#e6e6e6,#cfcfcf);
+  width:90px;height:90px;border-radius:50%;
+  margin:0 auto 15px;background:#ddd;
 }
 
-.rank-card h5{
-  font-weight:600;
-  margin-bottom:6px;
-}
-
-.rank-card p{
-  margin:0;
-  font-size:0.95rem;
-  color:#555;
-}
-
-/* ============ NEWS ============ */
-.news-box{
-  max-width:900px;
-  margin:auto;
-  background:#fff;
-  padding:30px;
-  border-radius:18px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.08);
-}
-
-.news-item{
-  padding:14px 0;
-  border-bottom:1px solid #e0e0e0;
-}
-
-.news-item:last-child{
-  border-bottom:none;
-}
-
-.news-item span{
-  color:#0b63d6;
-  font-weight:600;
-}
-
-/* ============ MOBILE ============ */
-@media(max-width:768px){
-  .navbar-nav{
-    text-align:center;
-  }
-}
-/* ============ LATEST NEWS SLIDER ============ */
+/* LATEST NEWS */
 .news-slider-wrapper{
-  max-width:1200px;
-  margin:auto;
   overflow:hidden;
-  position:relative;
 }
-
 .news-slider{
   display:flex;
+  width:max-content;
   gap:25px;
-  animation:scrollNews 5s linear infinite;
 }
-
 .news-card{
   min-width:280px;
   background:#fff;
-  border-radius:18px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.08);
-  overflow:hidden;
-  transition:0.3s;
+  border-radius:0;
+  cursor:pointer;
 }
-
-.news-card:hover{
-  transform:translateY(-8px);
-}
-
-/* Empty poster area */
-.news-poster{
-  height:180px;
-  background:linear-gradient(135deg,#e6e6e6,#cfcfcf);
-}
-
-/* Empty content area */
-.news-content{
-  padding:18px;
-}
-
-.news-title{
-  height:18px;
-  width:80%;
-  background:#ddd;
-  border-radius:6px;
-  margin-bottom:10px;
-}
-
-.news-date{
-  height:14px;
-  width:50%;
-  background:#eee;
-  border-radius:6px;
-}
-
-/* Auto scroll animation */
-@keyframes scrollNews{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-50%);}
-}
-
-/* Pause on hover */
-.news-slider-wrapper:hover .news-slider{
-  animation-play-state:paused;
-}
-/* ===== AUTO SCROLL PHOTO SLIDER ===== */
-.photo-slider-wrapper{
-  max-width:1200px;
-  margin:60px auto;
-  overflow:hidden;
-  position:relative;
-}
-
-.photo-slider{
-  display:flex;
-  gap:20px;
-  animation:photoScroll 5s linear infinite;
-}
-
-.photo-card{
-  min-width:260px;
-  height:180px;
-  border-radius:16px;
-  overflow:hidden;
-  background:#e6e6e6;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* Empty photo placeholder */
-.photo-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* Pause animation on hover */
-.photo-slider-wrapper:hover .photo-slider{
-  animation-play-state:paused;
-}
-
-/* Scroll animation */
-@keyframes photoScroll{
-  0%{ transform:translateX(0); }
-  100%{ transform:translateX(-50%); }
-}
-.rank-photo{
-  width:90px;
-  height:90px;
-  border-radius:50%;
-  object-fit:cover;
-  margin:0 auto 15px;
-  display:block;
-  box-shadow:0 6px 15px rgba(0,0,0,0.15);
-}
-
+.news-poster{height:180px;background:#ddd}
+.news-content{padding:18px}
+.news-title{height:18px;width:80%;background:#ccc;margin-bottom:10px}
+.news-date{height:14px;width:50%;background:#eee}
 </style>
 </head>
 
@@ -347,11 +116,9 @@ body{
   <a class="navbar-brand" href="index.html">
     <img src="https://i.ibb.co/RkDs4pfs/download.jpg">
   </a>
-
   <button class="navbar-toggler" data-toggle="collapse" data-target="#nav">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="nav">
     <ul class="navbar-nav">
       <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -373,7 +140,6 @@ body{
   <div>
     <h1>Satara Polytechnic Satara</h1>
     <img src="https://i.ibb.co/RkDs4pfs/download.jpg">
-
     <div class="admission-box">
       <h5>🎓 Admissions Open!</h5>
       <p>Mr. Phadtare M J : 9960182230</p>
@@ -385,188 +151,72 @@ body{
 
 <!-- WHY CHOOSE US -->
 <section class="section">
-  <h2>Why Choose Us</h2>
+<h2>Why Choose Us</h2>
+<div class="inner-container">
   <div class="features">
-    <div class="feature-card">
-      <h5>Experienced Faculty</h5>
-      <p>Highly qualified and dedicated teaching staff.</p>
-    </div>
-    <div class="feature-card">
-      <h5>Modern Infrastructure</h5>
-      <p>Well-equipped labs and digital classrooms.</p>
-    </div>
-    <div class="feature-card">
-      <h5>Excellent Placements</h5>
-      <p>Strong industry tie-ups and career support.</p>
-    </div>
+    <div class="feature-card"><h5>Experienced Faculty</h5><p>Highly qualified and dedicated teaching staff.</p></div>
+    <div class="feature-card"><h5>Modern Infrastructure</h5><p>Well-equipped labs and digital classrooms.</p></div>
+    <div class="feature-card"><h5>Excellent Placements</h5><p>Strong industry tie-ups and career support.</p></div>
   </div>
+</div>
 </section>
 
 <!-- OUR RANKERS -->
 <section class="section">
-  <h2>🏆 Our Rankers</h2>
-
-  <div class="rankers-year">
-    <h4>First Year</h4>
-    <div class="rankers-grid">
-      <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 1</h5><p>Student Name</p><p>Student Dept</p></div>
-      <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 2</h5><p>Student Name</p><p>Student Dept</p></div>
-      <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 3</h5><p>Student Name</p><p>Student Dept</p></div>
-    </div>
+<h2>🏆 Our Rankers</h2>
+<div class="inner-container">
+  <center><h4>First Year</h4></center>
+  <div class="rankers-grid">
+    <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 1</h5><p>Student Name</p><p>Student Dept</p></div>
+    <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 2</h5><p>Student Name</p><p>Student Dept</p></div>
+    <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 3</h5><p>Student Name</p><p>Student Dept</p></div>
   </div>
-
-  <div class="rankers-year">
-    <h4>Second Year</h4>
-    <div class="rankers-grid">
-      <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 1</h5><p>Student Name</p><p>Student Dept</p></div>
-      <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 2</h5><p>Student Name</p><p>Student Dept</p></div>
-      <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 3</h5><p>Student Name</p><p>Student Dept</p></div>
-    </div>
-  </div>
-  <div class="rankers-year">
-    <h4>Third Year</h4>
-    <div class="rankers-grid">
-      <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 1</h5><p>Student Name</p><p>Student Dept</p></div>
-      <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 2</h5><p>Student Name</p><p>Student Dept</p></div>
-      <div class="rank-card"><div class="rank-placeholder"></div><h5>Rank 3</h5><p>Student Name</p><p>Student Dept</p></div>
-    </div>
-  </div>
+</div>
 </section>
 
-<!-- AUTO SCROLL PHOTO SECTION -->
+<!-- LATEST NEWS -->
 <section class="section">
-  <h2>Life @ Institute</h2>
-
-  <div class="photo-slider-wrapper">
-    <div class="photo-slider">
-
-      <!-- PHOTO 1 -->
-      <div class="photo-card">
-        <img src="" alt="">
-      </div>
-
-      <!-- PHOTO 2 -->
-      <div class="photo-card">
-        <img src="" alt="">
-      </div>
-
-      <!-- PHOTO 3 -->
-      <div class="photo-card">
-        <img src="" alt="">
-      </div>
-
-      <!-- PHOTO 4 -->
-      <div class="photo-card">
-        <img src="" alt="">
-      </div>
-
-      <!-- PHOTO 5 -->
-      <div class="photo-card">
-        <img src="" alt="">
-      </div>
-
-      <!-- PHOTO 6 -->
-      <div class="photo-card">
-        <img src="" alt="">
-      </div>
-
-      <!-- PHOTO 7 -->
-      <div class="photo-card">
-        <img src="" alt="">
-      </div>
-
-      <!-- PHOTO 8 -->
-      <div class="photo-card">
-        <img src="" alt="">
-      </div>
-
-      <!-- PHOTO 9 -->
-      <div class="photo-card">
-        <img src="" alt="">
-      </div>
-
-      <!-- PHOTO 10 -->
-      <div class="photo-card">
-        <img src="" alt="">
-      </div>
-
-      <!-- DUPLICATE FIRST FEW FOR SMOOTH LOOP -->
-      <div class="photo-card"><img src="" alt=""></div>
-      <div class="photo-card"><img src="" alt=""></div>
-      <div class="photo-card"><img src="" alt=""></div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- LATEST NEWS (AUTO SCROLL) -->
-<section class="section">
-  <h2>Latest News</h2>
-
+<h2>Latest News</h2>
+<div class="inner-container">
   <div class="news-slider-wrapper">
-    <div class="news-slider">
+    <div class="news-slider" id="newsSlider">
+      <div class="news-card"><div class="news-poster"></div><div class="news-content"><div class="news-title"></div><div class="news-date"></div></div></div>
+      <div class="news-card"><div class="news-poster"></div><div class="news-content"><div class="news-title"></div><div class="news-date"></div></div></div>
+      <div class="news-card"><div class="news-poster"></div><div class="news-content"><div class="news-title"></div><div class="news-date"></div></div></div>
+      <div class="news-card"><div class="news-poster"></div><div class="news-content"><div class="news-title"></div><div class="news-date"></div></div></div>
 
-      <!-- CARD 1 -->
-      <div class="news-card">
-        <div class="news-poster"></div>
-        <div class="news-content">
-          <div class="news-title"></div>
-          <div class="news-date"></div>
-        </div>
-      </div>
-
-      <!-- CARD 2 -->
-      <div class="news-card">
-        <div class="news-poster"></div>
-        <div class="news-content">
-          <div class="news-title"></div>
-          <div class="news-date"></div>
-        </div>
-      </div>
-
-      <!-- CARD 3 -->
-      <div class="news-card">
-        <div class="news-poster"></div>
-        <div class="news-content">
-          <div class="news-title"></div>
-          <div class="news-date"></div>
-        </div>
-      </div>
-
-      <!-- CARD 4 -->
-      <div class="news-card">
-        <div class="news-poster"></div>
-        <div class="news-content">
-          <div class="news-title"></div>
-          <div class="news-date"></div>
-        </div>
-      </div>
-
-      <!-- DUPLICATE FOR SMOOTH LOOP -->
-      <div class="news-card">
-        <div class="news-poster"></div>
-        <div class="news-content">
-          <div class="news-title"></div>
-          <div class="news-date"></div>
-        </div>
-      </div>
-
-      <div class="news-card">
-        <div class="news-poster"></div>
-        <div class="news-content">
-          <div class="news-title"></div>
-          <div class="news-date"></div>
-        </div>
-      </div>
-
+      <!-- duplicate -->
+      <div class="news-card"><div class="news-poster"></div><div class="news-content"><div class="news-title"></div><div class="news-date"></div></div></div>
+      <div class="news-card"><div class="news-poster"></div><div class="news-content"><div class="news-title"></div><div class="news-date"></div></div></div>
     </div>
   </div>
+</div>
 </section>
 
+<script>
+const slider = document.getElementById('newsSlider');
+let pos = 0;
+let speed = 0.4;
+let max;
+
+function calc(){
+  max = slider.scrollWidth / 2;
+}
+window.onload = calc;
+window.onresize = calc;
+
+function move(){
+  pos -= speed;
+  if(Math.abs(pos) >= max) pos = 0;
+  slider.style.transform = `translateX(${pos}px)`;
+  requestAnimationFrame(move);
+}
+move();
+</script>
 
 </body>
 </html>
+
 
 
 
