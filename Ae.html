@@ -29,12 +29,23 @@ body{background:#f4f6fb;overflow-x:hidden;}
 
 /* HERO */
 .hero{
-  min-height:100vh;
-  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-  url('https://i.ibb.co/1YXVjQqm/3033.jpg') center/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;color:#fff;padding:120px 15px 60px
+  height:100vh;               /* exactly 1 screen */
+  background-image:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url('https://i.ibb.co/1YXVjQqm/3033.jpg');
+
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:contain;     /* 🔥 full image, no crop, no quality loss */
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  padding-top:80px;            /* navbar safe space */
 }
+
 .hero h1{font-size:clamp(32px,4.5vw,56px)}
 .hero img{width:140px;border-radius:50%;margin:25px 0}
 
@@ -131,6 +142,12 @@ body{background:#f4f6fb;overflow-x:hidden;}
 .news-3-track{
   will-change: transform;
   transform: translate3d(0,0,0);
+}
+@media (max-width: 768px){
+  .hero{
+    background-size:contain;   /* still full image */
+    padding-top:100px;         /* avoids navbar overlap */
+  }
 }
 
 </style>
