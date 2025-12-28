@@ -173,7 +173,13 @@ body{background:#f4f6fb;overflow-x:hidden;}
   will-change: transform;
   transform: translate3d(0,0,0);
 }
-
+@media(max-width:767px){
+  .navbar-collapse{
+    background:rgba(0,0,0,0.85);
+    padding:10px 0;
+    border-radius:0 0 12px 12px;
+  }
+}
 </style>
 </head>
 
@@ -516,6 +522,10 @@ window.addEventListener('resize', ()=>{
   updateSlider();
 });
 </script>
+<!-- REQUIRED FOR MOBILE NAVBAR -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
 
