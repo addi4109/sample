@@ -29,22 +29,22 @@ body{background:#f4f6fb;overflow-x:hidden;}
 
 /* HERO */
 .hero{
-  height:100vh;               /* exactly 1 screen */
+  height:100vh;
   background-image:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url('https://i.ibb.co/1YXVjQqm/3033.jpg');
+    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)),
+    url('3033.jpg');
 
-  background-position:center;
   background-repeat:no-repeat;
-  background-size:contain;     /* 🔥 full image, no crop, no quality loss */
+  background-position:right center;   /* 🔥 key */
+  background-size:cover;               /* desktop fit */
 
   display:flex;
   align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:#fff;
-  padding-top:80px;            /* navbar safe space */
+  justify-content:flex-start;
+  padding-left:8%;
+  color:#000;
 }
+
 
 .hero h1{font-size:clamp(32px,4.5vw,56px)}
 .hero img{width:140px;border-radius:50%;margin:25px 0}
@@ -145,11 +145,13 @@ body{background:#f4f6fb;overflow-x:hidden;}
 }
 @media (max-width: 768px){
   .hero{
-    background-size:contain;   /* still full image */
-    padding-top:100px;         /* avoids navbar overlap */
+    background-size:contain;        /* full image */
+    background-position:center;     /* balanced */
+    padding-left:0;
+    justify-content:center;
+    text-align:center;
   }
 }
-
 </style>
 </head>
 
