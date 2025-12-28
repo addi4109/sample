@@ -29,58 +29,25 @@ body{background:#f4f6fb;overflow-x:hidden;}
 
 /* HERO */
 .hero{
-  height:100vh;
-  background-image:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url('https://www.satarapolytechnicsatara.org/f1.jpg');
-  background-repeat:no-repeat;
-  background-position:center;
-  background-size:cover;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:#fff;
-  padding-top:90px;
+  min-height:100vh;
+  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+  url('https://i.ibb.co/xtYQmdPQ/aaa.jpg') center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;color:#fff;padding:120px 15px 60px
 }
+.hero h1{font-size:clamp(32px,4.5vw,56px)}
+.hero img{width:140px;border-radius:50%;margin:25px 0}
 
-.hero h1{
-  font-size:clamp(32px,4.5vw,56px);
-  opacity:0;
-  animation:titleFade 1.2s ease-out forwards;
+/* ADMISSION BOX */
+.admission-box{
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(12px);
+  padding:1.8rem 2.4rem;
+  border-radius:18px;
+  max-width:440px;
+  box-shadow:0 15px 40px rgba(0,0,0,.35)
 }
-
-.hero img{
-  width:140px;
-  border-radius:50%;
-  margin:25px 0;
-  opacity:0;
-  animation:
-    logoZoom 1.2s ease-out forwards,
-    logoFloat 4s ease-in-out infinite,
-    logoGlow 3s ease-in-out infinite;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes titleFade{
-  from{opacity:0;transform:translateY(20px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes logoZoom{
-  from{opacity:0;transform:scale(0.7);}
-  to{opacity:1;transform:scale(1);}
-}
-
-@keyframes logoFloat{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-6px);}
-}
-
-@keyframes logoGlow{
-  0%,100%{box-shadow:0 0 0 rgba(255,255,255,.3);}
-  50%{box-shadow:0 0 25px rgba(255,255,255,.6);}
-}
+.admission-box h5{color:#ffd24d}
 
 /* SECTION */
 .section{padding:80px 15px}
@@ -112,59 +79,58 @@ body{background:#f4f6fb;overflow-x:hidden;}
 .life-arrow.left{left:5px}
 .life-arrow.right{right:5px}
 
-/* LATEST NEWS */
+/* ================= LATEST NEWS ================= */
 .news-3{max-width:1100px;margin:80px auto;padding:0 15px;text-align:center}
-.news-3-wrapper{position:relative}
-.news-clip{overflow:hidden;width:100%}
+.news-3-wrapper{position:relative;overflow:visible}
+
+/* 🔥 THIS IS THE KEY FIX */
+.news-clip{
+  overflow:hidden;
+  width:100%;
+}
+
 .news-3-track{display:flex;gap:24px;transition:.5s}
 .news-card-3{
   min-width:calc(33.333% - 16px);
   background:#fff;border-radius:14px;
-  box-shadow:0 8px 30px rgba(0,0,0,.08)
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
+  overflow:hidden
 }
-.news-img{height:160px}
+.news-img{height:160px;background:#ddd}
 .news-img img{width:100%;height:100%;object-fit:cover}
 .news-body{padding:20px}
 .news-body h5{font-size:16px;font-weight:600}
 .news-body .date{font-size:13px;color:#777;margin-bottom:10px}
 
-.site-footer{background:#2f3b45;color:#fff;padding:18px;text-align:center}
-/* 📱 MOBILE – ONE NEWS CARD PER SCREEN */
-@media (max-width: 768px){
-
-  .news-card-3{
-    min-width:100% !important; /* one card */
-  }
-
-  .news-3-track{
-    gap:0; /* no extra space */
-  }
-
-  .news-3-wrapper{
-    padding:0 48px; /* keeps arrows visible */
-  }
-}
-/* 🎯 FORCE NEWS ARROWS LEFT & RIGHT (ALL DEVICES) */
+/* ARROWS */
 .news3-arrow{
-  top:50% !important;
-  transform:translateY(-50%) !important;
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  background:#fff;border-radius:50%;
+  box-shadow:0 4px 15px rgba(0,0,0,.15);
+  font-size:28px;font-weight:700;
+  cursor:pointer;z-index:10
 }
+.news3-arrow.left{left:10px}
+.news3-arrow.right{right:10px}
 
-.news3-arrow.left{
-  left:0 !important;
-}
+/* FOOTER */
+.site-footer{background:#2f3b45;color:#fff;padding:18px;text-align:center}
+  /* 📱 MOBILE FIX – Latest News: 1 card per screen */
+@media (max-width: 600px){
+  .news-card-3{
+    min-width:100%;
+  }
 
-.news3-arrow.right{
-  right:0 !important;
-}
-@media (max-width:768px){
   .news-3-wrapper{
-    position:relative;
+    padding:0 48px; /* keeps space for arrows */
   }
-
-  .news3-arrow{
-    top:50% !important;
-  }
+}
+/* 🚀 PERFORMANCE BOOST */
+.news-3-track{
+  will-change: transform;
+  transform: translate3d(0,0,0);
 }
 
 </style>
@@ -509,7 +475,6 @@ window.addEventListener('resize', ()=>{
   updateSlider();
 });
 </script>
-
 </body>
 </html>
 
