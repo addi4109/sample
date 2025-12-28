@@ -144,6 +144,28 @@ body{background:#f4f6fb;overflow-x:hidden;}
     padding:0 48px; /* keeps arrows visible */
   }
 }
+/* 🎯 FORCE NEWS ARROWS LEFT & RIGHT (ALL DEVICES) */
+.news3-arrow{
+  top:50% !important;
+  transform:translateY(-50%) !important;
+}
+
+.news3-arrow.left{
+  left:0 !important;
+}
+
+.news3-arrow.right{
+  right:0 !important;
+}
+@media (max-width:768px){
+  .news-3-wrapper{
+    position:relative;
+  }
+
+  .news3-arrow{
+    top:50% !important;
+  }
+}
 
 </style>
 </head>
